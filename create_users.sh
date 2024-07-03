@@ -7,16 +7,15 @@ mkdir -p /var/log /var/secure
 touch /var/log/user_management.log
 touch /var/secure/user_passwords.txt
 
-# make password file secure
+# make password file secure with owner permission
 
 chmod 600 /var/secure/user_passwords.txt
 
-# function to log actions to log
+# function to log actions
 log_action() {
     echo "$(date) - $1" >> "/var/log/user_management.log"
 }
-
-
+# create a function that handles user creation
 create_user() {
 
     # defines 3 variables passed to the function
